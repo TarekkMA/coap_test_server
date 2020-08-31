@@ -78,6 +78,9 @@ router.post("/echo", function (req, res) {
 });
 
 const server = coap.createServer((req, res) => {
+  console.log("==================================");
+  console.log(JSON.stringify(req, null, 2));
+  console.log("==================================");
   router(req, res, finalhandler(req, res));
 });
 server.listen();
